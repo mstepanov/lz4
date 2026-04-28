@@ -1,12 +1,12 @@
 // swift-tools-version: 5.6
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 //
-// lz4-cpp-SwiftPM
+// lz4-SwiftPM — LZ4 compression library for Swift Package Manager
 //
 import PackageDescription
 
 let package = Package(
-    name: "lz4-cpp",
+    name: "lz4",
     products: [
         .library(
             name: "lz4",
@@ -15,39 +15,22 @@ let package = Package(
     targets: [
         .target(
             name: "lz4",
-            path: ".",
+            path: "lib",
             exclude: [
-                "build/",
-                "contrib/",
-                "doc/",
-                "examples/",
-                "lib/dll",
-                "lib/liblz4-dll.rc.in",
-                "lib/liblz4.pc.in",
-                "ossfuzz/",
-                "programs/",
-                "tests/",
-                "appveyor.yml",
-                "INSTALL",
-                "LICENSE",
+                "dll",
+                "liblz4-dll.rc.in",
+                "liblz4.pc.in",
                 "Makefile",
-                "Makefile.inc",
-                "NEWS",
-                "README.md"
+                "README.md",
+                "LICENSE",
             ],
             sources: [
-                "lib/lz4.c",
-                "lib/lz4.h",
-                "lib/lz4file.c",
-                "lib/lz4file.h",
-                "lib/lz4frame_static.h",
-                "lib/lz4frame.c",
-                "lib/lz4frame.h",
-                "lib/lz4hc.c",
-                "lib/lz4hc.h",
-                "lib/xxhash.c",
-                "lib/xxhash.h",
+                "lz4.c",
+                "lz4file.c",
+                "lz4frame.c",
+                "lz4hc.c",
+                "xxhash.c",
             ],
-            publicHeadersPath: "lib")
+            publicHeadersPath: ".")
     ]
 )

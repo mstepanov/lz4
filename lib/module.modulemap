@@ -1,4 +1,8 @@
 module lz4 {
-   umbrella "../.."
-   explicit module * { export * }
- }
+    header "lz4.h"
+    header "lz4hc.h"
+    header "lz4frame.h"
+    header "lz4frame_static.h"
+    header "lz4file.h"
+    export *
+}
