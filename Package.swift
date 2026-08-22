@@ -31,6 +31,9 @@ let package = Package(
                 "lz4hc.c",
                 "xxhash.c",
             ],
-            publicHeadersPath: ".")
+            publicHeadersPath: ".",
+            cSettings: [
+                .define("LZ4F_STATIC_LINKING_ONLY"),
+            ])
     ]
 )
